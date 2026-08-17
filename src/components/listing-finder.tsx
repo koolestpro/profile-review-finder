@@ -99,22 +99,22 @@ export function ListingFinder() {
             className="rounded-lg border border-border bg-background/70 p-4"
           >
 
-            <div className="flex flex-col gap-3 sm:flex-row sm:items-end">
-              <div className="sm:w-24">
+            <div className="flex flex-row items-end gap-3">
+              <div className="w-24 shrink-0">
                 <label
                   htmlFor={`qty-${profile.id}`}
                   className="mb-1 block text-sm font-medium text-brand-ink"
                 >
                   Quantity
                 </label>
-                <select
-                  id={`qty-${profile.id}`}
-                  value={profile.quantity}
-                  onChange={(e) =>
-                    update(profile.id, { quantity: Number(e.target.value) })
-                  }
-                  className="h-11 w-full rounded-md border border-border bg-background px-3 text-sm font-semibold text-brand-ink outline-none focus:border-brand focus:ring-2 focus:ring-brand/30"
-                >
+                  <select
+                    id={`qty-${profile.id}`}
+                    value={profile.quantity}
+                    onChange={(e) =>
+                      update(profile.id, { quantity: Number(e.target.value) })
+                    }
+                    className="h-11 w-full rounded-md border border-border bg-background px-2 text-sm font-semibold text-brand-ink outline-none focus:border-brand focus:ring-2 focus:ring-brand/30"
+                  >
                   {Array.from(
                     { length: Math.max(1, profile.quantity + remaining) },
                     (_, i) => i + 1,
