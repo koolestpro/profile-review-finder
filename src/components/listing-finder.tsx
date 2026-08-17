@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { Check, Plus, Search } from "lucide-react";
+import { Plus, Search } from "lucide-react";
 
 const SUGGESTIONS = [
   "The Corner Barbers — 12 High St, Manchester",
