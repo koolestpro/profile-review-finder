@@ -151,10 +151,6 @@ export function ListingFinder() {
                     }
                     className="h-11 w-full rounded-md border border-border bg-background px-3 text-sm text-foreground outline-none placeholder:text-muted-foreground focus:border-brand focus:ring-2 focus:ring-brand/30"
                   />
-                  <p className="mt-2 text-xs text-muted-foreground">
-                    Add your review link, or just your business name and postcode
-                    — we'll find the review link for you.
-                  </p>
                 </div>
               ) : (
                 <div className="relative flex-1">
