@@ -99,8 +99,8 @@ export function ListingFinder() {
             className="rounded-lg border border-border bg-background/70 p-4"
           >
 
-            <div className="flex flex-col gap-3 sm:flex-row sm:items-end">
-              <div className="sm:w-24">
+            <div className="flex flex-row items-end gap-3">
+              <div className="w-24 shrink-0">
                 <label
                   htmlFor={`qty-${profile.id}`}
                   className="mb-1 block text-sm font-medium text-brand-ink"
