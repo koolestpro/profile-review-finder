@@ -87,8 +87,9 @@ export function ListingFinder() {
             )}
           </p>
         </div>
-        <span className="rounded-md border border-border bg-background px-3 py-2 text-sm font-semibold text-brand-ink">
-          {totalPlates}/{MAX_PLATES} Plates
+        <span className="inline-flex items-baseline gap-1 rounded-md border-2 border-brand bg-brand px-3 py-2 text-base font-bold text-brand-foreground shadow-sm">
+          <span className="tabular-nums">{totalPlates}/{MAX_PLATES}</span>
+          <span className="text-xs font-semibold uppercase tracking-wide opacity-90">Plates</span>
         </span>
       </div>
 
