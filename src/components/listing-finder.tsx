@@ -55,8 +55,7 @@ export function ListingFinder() {
 
   const remaining = MAX_PLATES - totalPlates;
 
-  const isComplete = (p: Profile) =>
-    manual ? Boolean(p.reviewLink.trim()) : Boolean(p.location);
+
 
   return (
     <section className="w-full max-w-2xl rounded-xl border-2 border-panel-border bg-panel p-5 shadow-panel sm:p-6">
