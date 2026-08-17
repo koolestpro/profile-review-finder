@@ -164,7 +164,7 @@ export function ListingFinder() {
                   <input
                     id={`loc-${profile.id}`}
                     value={profile.location}
-                    placeholder="Location Name"
+                    placeholder="Search here"
                     onChange={(e) => update(profile.id, { location: e.target.value })}
                     onFocus={() => setOpenFor(profile.id)}
                     onBlur={() => window.setTimeout(() => setOpenFor(null), 120)}
