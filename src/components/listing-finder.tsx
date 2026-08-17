@@ -107,14 +107,14 @@ export function ListingFinder() {
                 >
                   Quantity
                 </label>
-                <select
-                  id={`qty-${profile.id}`}
-                  value={profile.quantity}
-                  onChange={(e) =>
-                    update(profile.id, { quantity: Number(e.target.value) })
-                  }
-                  className="h-11 w-full rounded-md border border-border bg-background px-3 text-sm font-semibold text-brand-ink outline-none focus:border-brand focus:ring-2 focus:ring-brand/30"
-                >
+                  <select
+                    id={`qty-${profile.id}`}
+                    value={profile.quantity}
+                    onChange={(e) =>
+                      update(profile.id, { quantity: Number(e.target.value) })
+                    }
+                    className="h-11 w-full rounded-md border border-border bg-background px-2 text-sm font-semibold text-brand-ink outline-none focus:border-brand focus:ring-2 focus:ring-brand/30"
+                  >
                   {Array.from(
                     { length: Math.max(1, profile.quantity + remaining) },
                     (_, i) => i + 1,
