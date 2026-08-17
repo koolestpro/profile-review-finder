@@ -105,9 +105,7 @@ export function ListingFinder() {
                 <Check className="size-3.5" />
                 {isComplete(profile)
                   ? "1 of 1 products selected"
-                  : manual
-                    ? "Add your review link or business details"
-                    : "No listing selected yet"}
+                  : "No listing selected yet"}
               </span>
             </div>
 
