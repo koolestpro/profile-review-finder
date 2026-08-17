@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { Check, Plus, Search } from "lucide-react";
+import { Plus, Search } from "lucide-react";
 
 const SUGGESTIONS = [
   "The Corner Barbers — 12 High St, Manchester",
@@ -55,8 +55,7 @@ export function ListingFinder() {
 
   const remaining = MAX_PLATES - totalPlates;
 
-  const isComplete = (p: Profile) =>
-    manual ? Boolean(p.reviewLink.trim()) : Boolean(p.location);
+
 
   return (
     <section className="w-full max-w-2xl rounded-xl border-2 border-panel-border bg-panel p-5 shadow-panel sm:p-6">
@@ -99,14 +98,6 @@ export function ListingFinder() {
             key={profile.id}
             className="rounded-lg border border-border bg-background/70 p-4"
           >
-            {isComplete(profile) && (
-              <div className="mb-2 flex items-center justify-center">
-                <span className="inline-flex items-center gap-1.5 rounded-full bg-brand-soft px-3 py-1 text-xs font-medium text-brand-ink">
-                  <Check className="size-3.5" />
-                  1 of 1 products selected
-                </span>
-              </div>
-            )}
 
             <div className="flex flex-col gap-3 sm:flex-row sm:items-end">
               <div className="sm:w-24">
