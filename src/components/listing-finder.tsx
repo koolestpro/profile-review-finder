@@ -56,9 +56,7 @@ export function ListingFinder() {
   const remaining = MAX_PLATES - totalPlates;
 
   const isComplete = (p: Profile) =>
-    manual
-      ? Boolean(p.reviewLink.trim() || (p.businessName.trim() && p.postcode.trim()))
-      : Boolean(p.location);
+    manual ? Boolean(p.reviewLink.trim()) : Boolean(p.location);
 
   return (
     <section className="w-full max-w-2xl rounded-xl border-2 border-panel-border bg-panel p-5 shadow-panel sm:p-6">
@@ -137,70 +135,25 @@ export function ListingFinder() {
               </div>
 
               {manual ? (
-                <div className="flex-1 space-y-3">
-                  <div>
-                    <label
-                      htmlFor={`link-${profile.id}`}
-                      className="mb-1 block text-sm font-medium text-brand-ink"
-                    >
-                      Google Review Link
-                    </label>
-                    <input
-                      id={`link-${profile.id}`}
-                      value={profile.reviewLink}
-                      placeholder="https://g.page/r/..."
-                      onChange={(e) =>
-                        update(profile.id, { reviewLink: e.target.value })
-                      }
-                      className="h-11 w-full rounded-md border border-border bg-background px-3 text-sm text-foreground outline-none placeholder:text-muted-foreground focus:border-brand focus:ring-2 focus:ring-brand/30"
-                    />
-                  </div>
-
-                  <div className="flex items-center gap-3 text-xs font-medium uppercase tracking-wide text-muted-foreground">
-                    <span className="h-px flex-1 bg-border" />
-                    or
-                    <span className="h-px flex-1 bg-border" />
-                  </div>
-
-                  <div className="flex flex-col gap-3 sm:flex-row">
-                    <div className="flex-1">
-                      <label
-                        htmlFor={`biz-${profile.id}`}
-                        className="mb-1 block text-sm font-medium text-brand-ink"
-                      >
-                        Business Name
-                      </label>
-                      <input
-                        id={`biz-${profile.id}`}
-                        value={profile.businessName}
-                        placeholder="Business Name"
-                        onChange={(e) =>
-                          update(profile.id, { businessName: e.target.value })
-                        }
-                        className="h-11 w-full rounded-md border border-border bg-background px-3 text-sm text-foreground outline-none placeholder:text-muted-foreground focus:border-brand focus:ring-2 focus:ring-brand/30"
-                      />
-                    </div>
-                    <div className="sm:w-40">
-                      <label
-                        htmlFor={`pc-${profile.id}`}
-                        className="mb-1 block text-sm font-medium text-brand-ink"
-                      >
-                        Postcode
-                      </label>
-                      <input
-                        id={`pc-${profile.id}`}
-                        value={profile.postcode}
-                        placeholder="e.g. M1 2AB"
-                        onChange={(e) =>
-                          update(profile.id, { postcode: e.target.value })
-                        }
-                        className="h-11 w-full rounded-md border border-border bg-background px-3 text-sm text-foreground outline-none placeholder:text-muted-foreground focus:border-brand focus:ring-2 focus:ring-brand/30"
-                      />
-                    </div>
-                  </div>
-                  <p className="text-xs text-muted-foreground">
-                    Add the review link, or just the name and postcode — we&apos;ll find
-                    the review link for you.
+                <div className="flex-1">
+                  <label
+                    htmlFor={`link-${profile.id}`}
+                    className="mb-1 block text-sm font-medium text-brand-ink"
+                  >
+                    Review Link or Business Details
+                  </label>
+                  <input
+                    id={`link-${profile.id}`}
+                    value={profile.reviewLink}
+                    placeholder="Paste your review link, or enter your business name and postcode"
+                    onChange={(e) =>
+                      update(profile.id, { reviewLink: e.target.value })
+                    }
+                    className="h-11 w-full rounded-md border border-border bg-background px-3 text-sm text-foreground outline-none placeholder:text-muted-foreground focus:border-brand focus:ring-2 focus:ring-brand/30"
+                  />
+                  <p className="mt-2 text-xs text-muted-foreground">
+                    Add your review link, or just your business name and postcode
+                    — we'll find the review link for you.
                   </p>
                 </div>
               ) : (
